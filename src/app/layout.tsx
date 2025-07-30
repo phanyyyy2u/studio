@@ -4,7 +4,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Quinta Saucedo",
-  description: "Hotel for every moment rich in emotion.",
+  description: "El lugar perfecto para tus eventos.",
 };
 
 export default function RootLayout({
