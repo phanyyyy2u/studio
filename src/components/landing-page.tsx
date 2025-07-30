@@ -17,10 +17,7 @@ export default function LandingPage() {
                 <HeroSection />
                 <VenueShowcase />
                 <PackagesSection />
-                <AiPlannerSection />
                 <AvailabilitySection />
-                <MoodBoardSection />
-                <SocialFeedSection />
                 <ContactSection />
             </main>
             <Footer />

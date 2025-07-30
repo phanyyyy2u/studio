@@ -22,7 +22,7 @@ export default function VenueShowcase() {
       <div className="columns-2 md:columns-3 gap-4">
         {images.map((image, index) => (
           <div key={index} className="mb-4 break-inside-avoid">
-             <Card className="overflow-hidden">
+             <Card className="overflow-hidden rounded-lg shadow-md">
                 <CardContent className="p-0">
                     <Image
                     src={image.src}

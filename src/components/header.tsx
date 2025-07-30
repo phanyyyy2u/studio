@@ -2,8 +2,15 @@
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
-import { Menu, Star } from "lucide-react";
+import { Menu, Star, Languages } from "lucide-react";
 import React from "react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
 
 export default function Header() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -11,9 +18,8 @@ export default function Header() {
   const navLinks = [
     { href: "#venue", label: "Venue" },
     { href: "#packages", label: "Packages" },
-    { href: "#ai-planner", label: "AI Planner" },
     { href: "#availability", label: "Availability" },
-    { href: "#mood-board", label: "Mood Board" },
+    { href: "#contact", label: "Contact" },
   ];
   
   const NavLinksComponent = () => (
@@ -38,7 +44,7 @@ export default function Header() {
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <Star className="h-6 w-6 text-primary" />
             <span className="hidden font-bold sm:inline-block font-headline">
-              Quinta Saucedo Events
+              Quinta Saucedo
             </span>
           </Link>
           <nav className="flex items-center space-x-6 text-sm font-medium">
@@ -59,7 +65,7 @@ export default function Header() {
                 <Link href="/" className="mr-6 flex items-center space-x-2 mb-6">
                   <Star className="h-6 w-6 text-primary" />
                   <span className="font-bold font-headline">
-                    Quinta Saucedo Events
+                    Quinta Saucedo
                   </span>
                 </Link>
                 <nav className="flex flex-col space-y-4">
@@ -68,9 +74,27 @@ export default function Header() {
               </SheetContent>
             </Sheet>
           </div>
+          
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" size="icon">
+                <Languages className="h-5 w-5" />
+                <span className="sr-only">Change language</span>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem>
+                English
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                Español
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
           <a href="#contact">
             <Button>
-              Request Quote
+              Book Now
             </Button>
           </a>
         </div>

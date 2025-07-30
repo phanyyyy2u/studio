@@ -17,8 +17,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['Literata', 'serif'],
-        headline: ['Belleza', 'sans-serif'],
+        body: ['Poppins', 'sans-serif'],
+        headline: ['Playfair Display', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",

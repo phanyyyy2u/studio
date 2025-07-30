@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { Instagram, Facebook, Star } from "lucide-react";
-import { TiktokIcon } from "./icons";
+import { Instagram, Facebook, Star, Languages, MessageCircle } from "lucide-react";
+import { TiktokIcon, WhatsappIcon } from "./icons";
+import { Button } from "./ui/button";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -10,19 +11,25 @@ export default function Footer() {
         <div className="flex items-center space-x-2 mb-4 sm:mb-0">
           <Star className="h-5 w-5 text-primary" />
           <p className="text-sm text-muted-foreground">
-            &copy; {year} Quinta Saucedo Events. All Rights Reserved.
+            &copy; {year} Quinta Saucedo. All Rights Reserved.
           </p>
         </div>
         <div className="flex items-center space-x-4">
-          <Link href="#" aria-label="Instagram">
-            <Instagram className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
-          </Link>
-          <Link href="#" aria-label="Facebook">
-            <Facebook className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
-          </Link>
-          <Link href="#" aria-label="TikTok">
-            <TiktokIcon className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
-          </Link>
+          <Button variant="ghost" size="icon" asChild>
+            <Link href="#" aria-label="WhatsApp">
+              <WhatsappIcon className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
+            </Link>
+          </Button>
+          <Button variant="ghost" size="icon" asChild>
+            <Link href="#" aria-label="Facebook">
+              <Facebook className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
+            </Link>
+          </Button>
+           <Button variant="ghost" size="icon" asChild>
+            <Link href="#" aria-label="Instagram">
+              <Instagram className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
+            </Link>
+          </Button>
         </div>
       </div>
     </footer>
