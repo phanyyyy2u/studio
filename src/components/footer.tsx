@@ -1,0 +1,30 @@
+import Link from "next/link";
+import { Instagram, Facebook, Star } from "lucide-react";
+import { TiktokIcon } from "./icons";
+
+export default function Footer() {
+  const year = new Date().getFullYear();
+  return (
+    <footer className="bg-secondary">
+      <div className="container py-8 flex flex-col sm:flex-row items-center justify-between">
+        <div className="flex items-center space-x-2 mb-4 sm:mb-0">
+          <Star className="h-5 w-5 text-primary" />
+          <p className="text-sm text-muted-foreground">
+            &copy; {year} Quinta Saucedo Events. All Rights Reserved.
+          </p>
+        </div>
+        <div className="flex items-center space-x-4">
+          <Link href="#" aria-label="Instagram">
+            <Instagram className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
+          </Link>
+          <Link href="#" aria-label="Facebook">
+            <Facebook className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
+          </Link>
+          <Link href="#" aria-label="TikTok">
+            <TiktokIcon className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
+          </Link>
+        </div>
+      </div>
+    </footer>
+  );
+}
