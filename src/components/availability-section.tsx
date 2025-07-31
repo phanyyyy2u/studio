@@ -32,10 +32,19 @@ export default function AvailabilitySection() {
                 <CardContent className="p-2 sm:p-4 min-h-[385px] flex items-center justify-center">
                     {isClient ? (
                       <Calendar
-                          mode="multiple"
-                          className="w-full"
-                          disabled={{ before: new Date() }}
-                          defaultMonth={new Date()}
+                        mode="multiple"
+                        className="w-full"
+                        disabled={{ before: new Date() }}
+                        defaultMonth={new Date() }
+                        modifiers={{
+                          booked: [(date) => date.getFullYear() === 2025 && date.getMonth() === 7 && date.getDate() === 4]
+                        }}
+                        modifiersClassNames={{
+                          booked: "bg-red-500 text-white !opacity-100 border-2 border-red-700"
+                        }}
+                        modifiersStyles={{
+                          booked: { backgroundColor: '#ef4444', color: '#fff', border: '2px solid #b91c1c', opacity: 1 }
+                        }}
                       />
                     ) : (
                       <div className="w-full p-4">

@@ -42,12 +42,30 @@ export default function SocialFeedSection() {
     const { language } = useLanguage();
     const t = dictionary[language];
 
-  const instagramImages = [
-    { src: "/images/ig-1.jpg", hint: "wedding couple" },
-    { src: "/images/ig-2.jpg", hint: "dance floor" },
-    { src: "/images/ig-3.jpg", hint: "event fireworks" },
-    { src: "/images/ig-4.jpg", hint: "candid guest" },
-  ];
+  // Instagram real feed usando SnapWidget (puedes personalizar el tamaño y diseño en snapwidget.com)
+  const instagramWidget = (
+    <div className="w-full flex flex-col items-center">
+      <div className="flex items-center gap-2 mb-4">
+        <Instagram className="h-7 w-7 text-primary" />
+        <h3 className="font-headline text-2xl">Instagram</h3>
+      </div>
+      <div className="w-full max-w-2xl rounded-xl overflow-hidden shadow-lg border-2 border-rose-100">
+        {/* SnapWidget Instagram Feed */}
+        <iframe
+          src="https://snapwidget.com/embed/1104242"
+          title="Quinta Saucedo - Event salon"
+          className="w-full h-[340px] md:h-[510px] border-0"
+          allowTransparency={true}
+          frameBorder="0"
+          scrolling="no"
+          style={{ border: 'none', overflow: 'hidden' }}
+        ></iframe>
+      </div>
+      <Button variant="link" asChild className="mt-4 text-primary">
+        <a href="https://www.instagram.com/quintasaucedo/" target="_blank" rel="noopener noreferrer">Síguenos @quintasaucedo</a>
+      </Button>
+    </div>
+  );
   const facebookImages = [
     { src: "/images/fb-1.jpg", hint: "venue drone" },
     { src: "/images/fb-2.jpg", hint: "event catering" },
@@ -70,13 +88,7 @@ export default function SocialFeedSection() {
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          <SocialFeed
-            platform="Instagram"
-            icon={<Instagram className="h-7 w-7 text-primary" />}
-            handle="QuintaSaucedo"
-            images={instagramImages}
-            followText={t.social.follow}
-          />
+          {instagramWidget}
           <SocialFeed
             platform="Facebook"
             icon={<Facebook className="h-7 w-7 text-primary" />}
