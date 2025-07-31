@@ -20,7 +20,7 @@ export default function HeroSection() {
       <section className="relative h-[90vh] min-h-[700px] w-full flex items-center justify-center text-center text-white py-0">
         <div className="absolute top-0 left-0 w-full h-full">
           <Image
-            src="/images/hero.jpg"
+            src="/images/1.jpg"
             alt="Elegante lugar para eventos al aire libre"
             layout="fill"
             objectFit="cover"

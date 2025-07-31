@@ -9,12 +9,12 @@ export default function VenueShowcase() {
   const t = dictionary[language];
 
   const images = [
-    { src: "/images/venue-1.jpg", alt: "Garden area set up for a wedding ceremony", hint: "wedding ceremony" },
-    { src: "/images/venue-2.jpg", alt: "Main salon decorated for a quinceañera", hint: "quinceanera reception" },
-    { src: "/images/venue-3.jpg", alt: "Poolside view during an evening event", hint: "poolside evening" },
-    { src: "/images/venue-4.jpg", alt: "Corporate meeting setup in the main hall", hint: "corporate meeting" },
-    { src: "/images/venue-5.jpg", alt: "Detailed view of table setting", hint: "table setting" },
-    { src: "/images/venue-6.jpg", alt: "Lush greenery surrounding the venue", hint: "lush garden" },
+    { src: "/images/1.jpg", alt: "Garden area set up for a wedding ceremony", hint: "wedding ceremony" },
+    { src: "/images/2.jpg", alt: "Main salon decorated for a quinceañera", hint: "quinceanera reception" },
+    { src: "/images/3.jpg", alt: "Poolside view during an evening event", hint: "poolside evening" },
+    { src: "/images/4.jpg", alt: "Corporate meeting setup in the main hall", hint: "corporate meeting" },
+    { src: "/images/1.jpg", alt: "Detailed view of table setting", hint: "table setting" },
+    { src: "/images/2.jpg", alt: "Lush greenery surrounding the venue", hint: "lush garden" },
   ];
 
   return (
