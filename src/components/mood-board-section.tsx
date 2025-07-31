@@ -9,14 +9,14 @@ import { useLanguage } from "@/lib/language-provider";
 import { dictionary } from "@/lib/i18n";
 
 const moodImages = [
-  { src: "https://placehold.co/400x401", alt: "Bohemian style table setting", hint: "bohemian table" },
-  { src: "https://placehold.co/400x402", alt: "Minimalist floral centerpiece", hint: "minimalist floral" },
-  { src: "https://placehold.co/400x403", alt: "Vintage lighting fixtures", hint: "vintage lighting" },
-  { src: "https://placehold.co/400x404", alt: "Modern lounge area setup", hint: "modern lounge" },
-  { src: "https://placehold.co/400x405", alt: "Rustic outdoor ceremony arch", hint: "rustic arch" },
-  { src: "https://placehold.co/400x406", alt: "Elegant gold cutlery", hint: "gold cutlery" },
-  { src: "https://placehold.co/400x407", alt: "Pastel color balloon decorations", hint: "pastel balloons" },
-  { src: "https://placehold.co/400x408", alt: "Luxurious velvet seating", hint: "velvet seating" },
+  { src: "/images/mood-1.jpg", alt: "Bohemian style table setting", hint: "bohemian table" },
+  { src: "/images/mood-2.jpg", alt: "Minimalist floral centerpiece", hint: "minimalist floral" },
+  { src: "/images/mood-3.jpg", alt: "Vintage lighting fixtures", hint: "vintage lighting" },
+  { src: "/images/mood-4.jpg", alt: "Modern lounge area setup", hint: "modern lounge" },
+  { src: "/images/mood-5.jpg", alt: "Rustic outdoor ceremony arch", hint: "rustic arch" },
+  { src: "/images/mood-6.jpg", alt: "Elegant gold cutlery", hint: "gold cutlery" },
+  { src: "/images/mood-7.jpg", alt: "Pastel color balloon decorations", hint: "pastel balloons" },
+  { src: "/images/mood-8.jpg", alt: "Luxurious velvet seating", hint: "velvet seating" },
 ];
 
 export default function MoodBoardSection() {

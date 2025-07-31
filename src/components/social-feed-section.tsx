@@ -43,22 +43,22 @@ export default function SocialFeedSection() {
     const t = dictionary[language];
 
   const instagramImages = [
-    { src: "https://placehold.co/200x201", hint: "wedding couple" },
-    { src: "https://placehold.co/200x202", hint: "dance floor" },
-    { src: "https://placehold.co/200x203", hint: "event fireworks" },
-    { src: "https://placehold.co/200x204", hint: "candid guest" },
+    { src: "/images/ig-1.jpg", hint: "wedding couple" },
+    { src: "/images/ig-2.jpg", hint: "dance floor" },
+    { src: "/images/ig-3.jpg", hint: "event fireworks" },
+    { src: "/images/ig-4.jpg", hint: "candid guest" },
   ];
   const facebookImages = [
-    { src: "https://placehold.co/200x205", hint: "venue drone" },
-    { src: "https://placehold.co/200x206", hint: "event catering" },
-    { src: "https://placehold.co/200x207", hint: "wedding cake" },
-    { src: "https://placehold.co/200x208", hint: "happy guests" },
+    { src: "/images/fb-1.jpg", hint: "venue drone" },
+    { src: "/images/fb-2.jpg", hint: "event catering" },
+    { src: "/images/fb-3.jpg", hint: "wedding cake" },
+    { src: "/images/fb-4.jpg", hint: "happy guests" },
   ];
   const tiktokImages = [
-    { src: "https://placehold.co/200x209", hint: "event highlights" },
-    { src: "https://placehold.co/200x210", hint: "decor timelapse" },
-    { src: "https://placehold.co/200x211", hint: "guest reactions" },
-    { src: "https://placehold.co/200x212", hint: "party transition" },
+    { src: "/images/tt-1.jpg", hint: "event highlights" },
+    { src: "/images/tt-2.jpg", hint: "decor timelapse" },
+    { src: "/images/tt-3.jpg", hint: "guest reactions" },
+    { src: "/images/tt-4.jpg", hint: "party transition" },
   ];
   return (
     <section id="social" className="bg-secondary">

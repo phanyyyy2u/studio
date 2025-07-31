@@ -9,12 +9,12 @@ export default function VenueShowcase() {
   const t = dictionary[language];
 
   const images = [
-    { src: "https://placehold.co/600x800", alt: "Garden area set up for a wedding ceremony", hint: "wedding ceremony" },
-    { src: "https://placehold.co/600x400", alt: "Main salon decorated for a quinceañera", hint: "quinceanera reception" },
-    { src: "https://placehold.co/600x400", alt: "Poolside view during an evening event", hint: "poolside evening" },
-    { src: "https://placehold.co/600x800", alt: "Corporate meeting setup in the main hall", hint: "corporate meeting" },
-    { src: "https://placehold.co/600x400", alt: "Detailed view of table setting", hint: "table setting" },
-    { src: "https://placehold.co/600x400", alt: "Lush greenery surrounding the venue", hint: "lush garden" },
+    { src: "/images/venue-1.jpg", alt: "Garden area set up for a wedding ceremony", hint: "wedding ceremony" },
+    { src: "/images/venue-2.jpg", alt: "Main salon decorated for a quinceañera", hint: "quinceanera reception" },
+    { src: "/images/venue-3.jpg", alt: "Poolside view during an evening event", hint: "poolside evening" },
+    { src: "/images/venue-4.jpg", alt: "Corporate meeting setup in the main hall", hint: "corporate meeting" },
+    { src: "/images/venue-5.jpg", alt: "Detailed view of table setting", hint: "table setting" },
+    { src: "/images/venue-6.jpg", alt: "Lush greenery surrounding the venue", hint: "lush garden" },
   ];
 
   return (
@@ -27,7 +27,7 @@ export default function VenueShowcase() {
       </div>
       <div className="columns-2 md:columns-3 gap-4">
         {images.map((image, index) => (
-          <div key={index} className="mb-4 break-inside-avoid">
+          <div key={image.src} className="mb-4 break-inside-avoid">
              <Card className="overflow-hidden rounded-lg shadow-md">
                 <CardContent className="p-0">
                     <Image
