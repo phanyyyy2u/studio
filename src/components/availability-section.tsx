@@ -73,11 +73,11 @@ export default function AvailabilitySection() {
                     <div className="space-y-3">
                          <div className="flex items-center gap-3">
                             <Phone className="h-5 w-5 text-primary"/>
-                            <span>(555) 123-4567</span>
+                            <span>844 254 5235</span>
                         </div>
                         <div className="flex items-center gap-3">
                             <Mail className="h-5 w-5 text-primary"/>
-                            <span>contact@qs-events.com</span>
+                            <span>qsevents67@gmail.com</span>
                         </div>
                     </div>
                     <a href="#contact" className="block pt-2">

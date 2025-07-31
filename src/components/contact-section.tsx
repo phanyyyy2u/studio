@@ -111,7 +111,7 @@ export default function ContactSection() {
                     <FormItem>
                       <FormLabel>{t.contact.form.email}</FormLabel>
                       <FormControl>
-                        <Input placeholder="you@example.com" {...field} />
+                        <Input placeholder="qsevents67@gmail.com" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>

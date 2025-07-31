@@ -21,7 +21,7 @@ export default function Footer() {
             </Link>
           </Button>
           <Button variant="ghost" size="icon" asChild>
-            <Link href="https://www.facebook.com/profile.php?id=100095272112778" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <Link href="https://www.facebook.com/profile.php?id=61558472693983" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <Facebook className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
             </Link>
           </Button>

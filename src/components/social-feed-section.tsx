@@ -9,6 +9,16 @@ import { dictionary } from "@/lib/i18n";
 import Link from "next/link";
 
 const SocialFeed = ({ platform, icon, handle, images, followText }: { platform: string, icon: React.ReactNode, handle: string, images: {src: string, hint: string}[], followText: string }) => {
+  // Si es Facebook, usar el link real y el nombre correcto
+  const isFacebook = platform === "Facebook";
+  const followLink = isFacebook
+    ? "https://www.facebook.com/profile.php?id=61558472693983"
+    : platform === "Instagram"
+      ? `https://www.instagram.com/${handle}/`
+      : platform === "TikTok"
+        ? `https://www.tiktok.com/@${handle}`
+        : "#";
+  const followName = isFacebook ? "Quinta Saucedo" : `@${handle}`;
   return (
     <div className="flex flex-col items-center">
       <div className="flex items-center gap-2 mb-4">
@@ -32,7 +42,7 @@ const SocialFeed = ({ platform, icon, handle, images, followText }: { platform: 
         ))}
       </div>
       <Button variant="link" asChild className="mt-4 text-primary">
-        <Link href="#">{followText} @{handle}</Link>
+        <a href={followLink} target="_blank" rel="noopener noreferrer">{followText} {followName}</a>
       </Button>
     </div>
   );
@@ -92,7 +102,7 @@ export default function SocialFeedSection() {
           <SocialFeed
             platform="Facebook"
             icon={<Facebook className="h-7 w-7 text-primary" />}
-            handle="QuintaSaucedoEvents"
+            handle="QuintaSaucedo"
             images={facebookImages}
             followText={t.social.follow}
           />
