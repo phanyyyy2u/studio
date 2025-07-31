@@ -149,7 +149,7 @@ export const dictionary = {
     },
     hero: {
       title: "Un lugar para cada momento lleno de emoción",
-      subtitle: "Descubre el escenario perfecto para tu día especial en Quinta Saucedo, donde la elegancia se encuentra con la naturaleza.",
+      subtitle: "Descubre el escenario perfecto para tu día especial en Quinta Saucedo, ubicada en Piedras Negras, donde la elegancia se encuentra con la naturaleza.",
       exploreButton: "Explorar el Lugar",
       tourButton: "Haz un Tour Virtual",
     },
