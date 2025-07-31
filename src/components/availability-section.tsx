@@ -1,14 +1,21 @@
 "use client";
+import { useState, useEffect } from "react";
 import { CalendarDays, Phone, Mail } from "lucide-react";
 import { Button } from "./ui/button";
 import { Calendar } from "./ui/calendar";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { Skeleton } from "./ui/skeleton";
 import { useLanguage } from "@/lib/language-provider";
 import { dictionary } from "@/lib/i18n";
 
 export default function AvailabilitySection() {
   const { language } = useLanguage();
   const t = dictionary[language];
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   return (
     <section id="availability" className="bg-secondary">
@@ -22,13 +29,28 @@ export default function AvailabilitySection() {
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
             <Card className="lg:col-span-2 shadow-lg">
-                <CardContent className="p-2 sm:p-4">
-                    <Calendar
-                        mode="multiple"
-                        className="w-full"
-                        disabled={{ before: new Date() }}
-                        defaultMonth={new Date()}
-                     />
+                <CardContent className="p-2 sm:p-4 min-h-[385px] flex items-center justify-center">
+                    {isClient ? (
+                      <Calendar
+                          mode="multiple"
+                          className="w-full"
+                          disabled={{ before: new Date() }}
+                          defaultMonth={new Date()}
+                      />
+                    ) : (
+                      <div className="w-full p-4">
+                        <div className="flex justify-between items-center mb-4">
+                          <Skeleton className="h-8 w-24" />
+                          <Skeleton className="h-8 w-32" />
+                          <Skeleton className="h-8 w-24" />
+                        </div>
+                         <div className="grid grid-cols-7 gap-2">
+                            {[...Array(35)].map((_, i) => (
+                              <Skeleton key={i} className="h-12 w-12 rounded-md" />
+                            ))}
+                        </div>
+                      </div>
+                    )}
                 </CardContent>
             </Card>
              <Card className="shadow-lg">
