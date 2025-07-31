@@ -31,7 +31,7 @@ export default function PackagesSection() {
   ]
 
   return (
-    <section id="packages" className="bg-secondary">
+    <section id="packages" className="bg-secondary animate-fade-in-up" style={{animationDuration: '1.2s'}}>
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-headline font-bold">{t.packages.title}</h2>

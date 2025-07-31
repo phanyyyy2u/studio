@@ -17,7 +17,7 @@ export default function HeroSection() {
 
   return (
     <>
-      <section className="relative h-[90vh] min-h-[700px] w-full flex items-center justify-center text-center text-white py-0">
+      <section className="relative h-[90vh] min-h-[700px] w-full flex items-center justify-center text-center text-white py-0 animate-fade-in-up" style={{animationDuration: '1.2s'}}>
         <div className="absolute top-0 left-0 w-full h-full">
           <Image
             src="/images/1.jpg"

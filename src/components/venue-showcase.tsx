@@ -33,7 +33,7 @@ export default function VenueShowcase() {
   };
 
   return (
-    <section id="venue" className="container">
+    <section id="venue" className="container animate-fade-in-up" style={{animationDuration: '1.2s'}}>
       <div className="text-center mb-12">
         <h2 className="text-4xl font-headline font-bold">{t.venue.title}</h2>
         <p className="text-lg text-muted-foreground mt-2 max-w-2xl mx-auto">

@@ -18,7 +18,7 @@ export default function GallerySection() {
   const next = () => setCurrent((c) => (c === total - 1 ? 0 : c + 1));
 
   return (
-    <section id="galeria" className="container py-16">
+    <section id="galeria" className="container py-16 animate-fade-in-up" style={{animationDuration: '1.2s'}}>
       <h2 className="text-3xl font-headline font-bold text-center mb-8 text-rose-700">Galería de fotos</h2>
       <div className="flex flex-col items-center">
         <div className="relative w-full max-w-xl aspect-video rounded-xl overflow-hidden shadow-lg">

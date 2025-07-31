@@ -21,7 +21,7 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   return (
-    <section id="testimonios" className="container py-16">
+    <section id="testimonios" className="container py-16 animate-fade-in-up" style={{animationDuration: '1.2s'}}>
       <h2 className="text-3xl font-headline font-bold text-center mb-8 text-rose-700">Testimonios</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {testimonials.map((t, i) => (

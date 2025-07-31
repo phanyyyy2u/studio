@@ -18,7 +18,7 @@ export default function AvailabilitySection() {
   }, []);
 
   return (
-    <section id="availability" className="bg-secondary">
+    <section id="availability" className="bg-secondary animate-fade-in-up" style={{animationDuration: '1.2s'}}>
       <div className="container">
         <div className="text-center mb-12">
           <CalendarDays className="h-12 w-12 mx-auto text-primary" />

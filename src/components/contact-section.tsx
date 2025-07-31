@@ -46,7 +46,7 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" className="container">
+    <section id="contact" className="container animate-fade-in-up" style={{animationDuration: '1.2s'}}>
       <div className="text-center mb-12">
         <MailCheck className="h-12 w-12 mx-auto text-primary" />
         <h2 className="text-4xl font-headline font-bold mt-4">{t.contact.title}</h2>
