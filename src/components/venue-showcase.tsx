@@ -61,20 +61,15 @@ export default function VenueShowcase() {
       <Dialog open={open} onOpenChange={handleClose}>
         <DialogContent className="max-w-2xl bg-gradient-to-br from-amber-50/95 to-rose-100/90 border-0 shadow-2xl flex flex-col items-center justify-center p-0 animate-fade-in rounded-2xl">
           {selectedImg && (
-            <>
-              <div className="w-full flex justify-between items-center px-6 pt-4">
-                <span className="text-lg font-semibold text-rose-700 drop-shadow-sm">{selectedImg.alt}</span>
-              </div>
-              <div className="w-full flex items-center justify-center p-4">
-                <Image
-                  src={selectedImg.src}
-                  alt={selectedImg.alt}
-                  width={1200}
-                  height={800}
-                  className="w-full h-auto max-h-[70vh] object-contain rounded-xl shadow-lg transition-all duration-300"
-                />
-              </div>
-            </>
+            <div className="w-full flex items-center justify-center p-4">
+              <Image
+                src={selectedImg.src}
+                alt={selectedImg.alt}
+                width={1200}
+                height={800}
+                className="w-full h-auto max-h-[70vh] object-contain rounded-xl shadow-lg transition-all duration-300"
+              />
+            </div>
           )}
         </DialogContent>
       </Dialog>
