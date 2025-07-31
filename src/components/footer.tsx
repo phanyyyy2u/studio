@@ -16,17 +16,17 @@ export default function Footer() {
         </div>
         <div className="flex items-center space-x-4">
           <Button variant="ghost" size="icon" asChild>
-            <Link href="#" aria-label="WhatsApp">
+            <Link href="https://wa.me/528781118320" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
               <WhatsappIcon className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
             </Link>
           </Button>
           <Button variant="ghost" size="icon" asChild>
-            <Link href="#" aria-label="Facebook">
+            <Link href="https://www.facebook.com/profile.php?id=100095272112778" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <Facebook className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
             </Link>
           </Button>
-           <Button variant="ghost" size="icon" asChild>
-            <Link href="#" aria-label="Instagram">
+          <Button variant="ghost" size="icon" asChild>
+            <Link href="https://www.instagram.com/quintasaucedo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <Instagram className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
             </Link>
           </Button>
