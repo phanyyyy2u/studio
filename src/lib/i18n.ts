@@ -90,6 +90,32 @@ export const dictionary = {
         subtitle: "See the latest events and get inspired by our vibrant community on social media.",
         follow: "Follow",
     },
+    testimonials: {
+      title: "Testimonials",
+      items: [
+        {
+          name: "Ana López",
+          text: "The place is beautiful and the service was excellent! My wedding was unforgettable.",
+          date: "July 2025"
+        },
+        {
+          name: "Carlos Méndez",
+          text: "Very attentive and flexible. Everything was perfect for our corporate event.",
+          date: "June 2025"
+        },
+        {
+          name: "María García",
+          text: "The garden and decoration exceeded our expectations. I would repeat without hesitation!",
+          date: "May 2025"
+        }
+      ]
+    },
+    gallery: {
+      title: "Photo Gallery"
+    },
+    map: {
+      title: "Where are we?"
+    },
     contact: {
         title: "Get in Touch",
         subtitle: "Have questions or ready to book your event? Fill out the form below or contact us directly.",
@@ -200,6 +226,32 @@ export const dictionary = {
         title: "Sigue Nuestra Historia",
         subtitle: "Ve los últimos eventos e inspírate con nuestra vibrante comunidad en las redes sociales.",
         follow: "Seguir",
+    },
+    testimonials: {
+      title: "Testimonios",
+      items: [
+        {
+          name: "Ana López",
+          text: "¡El lugar es hermoso y el servicio fue excelente! Mi boda fue inolvidable.",
+          date: "Julio 2025"
+        },
+        {
+          name: "Carlos Méndez",
+          text: "Muy atentos y flexibles. Todo salió perfecto para nuestro evento corporativo.",
+          date: "Junio 2025"
+        },
+        {
+          name: "María García",
+          text: "El jardín y la decoración superaron nuestras expectativas. ¡Repetiría sin dudarlo!",
+          date: "Mayo 2025"
+        }
+      ]
+    },
+    gallery: {
+      title: "Galería de fotos"
+    },
+    map: {
+      title: "¿Dónde estamos?"
     },
     contact: {
         title: "Ponte en Contacto",

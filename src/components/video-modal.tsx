@@ -2,14 +2,26 @@
 
 import { Dialog, DialogContent } from "./ui/dialog";
 
+
 interface VideoModalProps {
   isOpen: boolean;
   onClose: () => void;
   videoId: string;
+  videoType?: 'youtube' | 'facebook';
 }
 
-export default function VideoModal({ isOpen, onClose, videoId }: VideoModalProps) {
+export default function VideoModal({ isOpen, onClose, videoId, videoType = 'youtube' }: VideoModalProps) {
   if (!isOpen) return null;
+
+  let src = '';
+  let title = '';
+  if (videoType === 'facebook') {
+    src = videoId;
+    title = 'Facebook video player';
+  } else {
+    src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+    title = 'YouTube video player';
+  }
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
@@ -18,10 +30,10 @@ export default function VideoModal({ isOpen, onClose, videoId }: VideoModalProps
           <iframe
             width="100%"
             height="100%"
-            src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`}
-            title="YouTube video player"
+            src={src}
+            title={title}
             frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
             allowFullScreen
             className="rounded-lg"
           ></iframe>

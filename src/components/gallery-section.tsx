@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import { useLanguage } from "@/lib/language-provider";
+import { dictionary } from "@/lib/i18n";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -11,6 +13,8 @@ const images = [
 ];
 
 export default function GallerySection() {
+  const { language } = useLanguage();
+  const t = dictionary[language];
   const [current, setCurrent] = useState(0);
   const total = images.length;
 
@@ -19,7 +23,7 @@ export default function GallerySection() {
 
   return (
     <section id="galeria" className="container py-16 animate-fade-in-up" style={{animationDuration: '1.2s'}}>
-      <h2 className="text-3xl font-headline font-bold text-center mb-8 text-rose-700">Galería de fotos</h2>
+      <h2 className="text-3xl font-headline font-bold text-center mb-8 text-rose-700">{t.gallery.title}</h2>
       <div className="flex flex-col items-center">
         <div className="relative w-full max-w-xl aspect-video rounded-xl overflow-hidden shadow-lg">
           <Image

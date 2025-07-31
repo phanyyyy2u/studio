@@ -12,8 +12,8 @@ export default function HeroSection() {
   const t = dictionary[language];
   const [modalOpen, setModalOpen] = useState(false);
 
-  // Reemplaza esta URL con el ID de tu video de YouTube
-  const videoId = "dQw4w9WgXcQ"; 
+  // Video de Facebook (src del iframe)
+  const videoId = "https://www.facebook.com/plugins/video.php?height=316&href=https%3A%2F%2Fwww.facebook.com%2F100095272112778%2Fvideos%2F23904706119182285%2F&show_text=false&width=560&t=0";
 
   return (
     <>
@@ -21,7 +21,7 @@ export default function HeroSection() {
         <div className="absolute top-0 left-0 w-full h-full">
           <Image
             src="/images/1.jpg"
-            alt="Elegante lugar para eventos al aire libre"
+            alt="Amigable y tranquilo lugar para eventos al aire libre"
             layout="fill"
             objectFit="cover"
             className="z-0"
@@ -53,6 +53,7 @@ export default function HeroSection() {
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
         videoId={videoId}
+        videoType="facebook"
       />
     </>
   );

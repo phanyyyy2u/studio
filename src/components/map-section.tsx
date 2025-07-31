@@ -1,9 +1,13 @@
 "use client";
+import { useLanguage } from "@/lib/language-provider";
+import { dictionary } from "@/lib/i18n";
 
 export default function MapSection() {
+  const { language } = useLanguage();
+  const t = dictionary[language];
   return (
     <section id="ubicacion" className="container py-16 animate-fade-in-up" style={{animationDuration: '1.2s'}}>
-      <h2 className="text-3xl font-headline font-bold text-center mb-8 text-emerald-700">¿Dónde estamos?</h2>
+      <h2 className="text-3xl font-headline font-bold text-center mb-8 text-emerald-700">{t.map.title}</h2>
       <div className="flex justify-center">
         <div className="w-full max-w-2xl rounded-xl overflow-hidden shadow-lg border-2 border-emerald-100">
         <iframe
