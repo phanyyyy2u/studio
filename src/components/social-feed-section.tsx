@@ -49,17 +49,17 @@ export default function SocialFeedSection() {
         <Instagram className="h-7 w-7 text-primary" />
         <h3 className="font-headline text-2xl">Instagram</h3>
       </div>
-      <div className="w-full max-w-2xl rounded-xl overflow-hidden shadow-lg border-2 border-rose-100">
-        {/* SnapWidget Instagram Feed */}
-        <iframe
-          src="https://snapwidget.com/embed/1104242"
-          title="Quinta Saucedo - Event salon"
-          className="w-full h-[340px] md:h-[510px] border-0"
-          allowTransparency={true}
-          frameBorder="0"
-          scrolling="no"
-          style={{ border: 'none', overflow: 'hidden' }}
-        ></iframe>
+        <div className="w-full max-w-2xl rounded-xl overflow-hidden shadow-lg border-2 border-rose-100">
+          {/* SnapWidget Instagram Feed actualizado */}
+          <iframe
+            src="https://snapwidget.com/embed/1104246"
+            title="Quinta Saucedo - Event salon"
+            className="snapwidget-widget w-full h-[510px] border-0"
+            allowTransparency={true}
+            frameBorder="0"
+            scrolling="no"
+            style={{ border: 'none', overflow: 'hidden', width: '100%', height: '510px' }}
+          />
       </div>
       <Button variant="link" asChild className="mt-4 text-primary">
         <a href="https://www.instagram.com/quintasaucedo/" target="_blank" rel="noopener noreferrer">Síguenos @quintasaucedo</a>
