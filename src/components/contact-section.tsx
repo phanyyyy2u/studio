@@ -10,6 +10,9 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { MailCheck } from "lucide-react";
+import { useLanguage } from "@/lib/language-provider";
+import { dictionary } from "@/lib/i18n";
+
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters."),
@@ -20,6 +23,8 @@ const formSchema = z.object({
 
 export default function ContactSection() {
   const { toast } = useToast();
+  const { language } = useLanguage();
+  const t = dictionary[language];
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -34,8 +39,8 @@ export default function ContactSection() {
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
     toast({
-      title: "Message Sent!",
-      description: "Thank you for your inquiry. We will get back to you shortly.",
+      title: t.contact.toast.title,
+      description: t.contact.toast.description,
     });
     form.reset();
   }
@@ -44,15 +49,15 @@ export default function ContactSection() {
     <section id="contact" className="container">
       <div className="text-center mb-12">
         <MailCheck className="h-12 w-12 mx-auto text-primary" />
-        <h2 className="text-4xl font-headline font-bold mt-4">Get in Touch</h2>
+        <h2 className="text-4xl font-headline font-bold mt-4">{t.contact.title}</h2>
         <p className="text-lg text-muted-foreground mt-2 max-w-2xl mx-auto">
-          Have questions or ready to book your event? Fill out the form below or contact us directly.
+          {t.contact.subtitle}
         </p>
       </div>
       <Card className="max-w-3xl mx-auto shadow-lg">
         <CardHeader>
-          <CardTitle className="font-headline text-2xl">Quotation & Inquiry Form</CardTitle>
-          <CardDescription>We're excited to help you plan your perfect event.</CardDescription>
+          <CardTitle className="font-headline text-2xl">{t.contact.formTitle}</CardTitle>
+          <CardDescription>{t.contact.formDescription}</CardDescription>
         </CardHeader>
         <CardContent>
           <Form {...form}>
@@ -63,7 +68,7 @@ export default function ContactSection() {
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Full Name</FormLabel>
+                      <FormLabel>{t.contact.form.name}</FormLabel>
                       <FormControl>
                         <Input placeholder="John Doe" {...field} />
                       </FormControl>
@@ -76,7 +81,7 @@ export default function ContactSection() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Email Address</FormLabel>
+                      <FormLabel>{t.contact.form.email}</FormLabel>
                       <FormControl>
                         <Input placeholder="you@example.com" {...field} />
                       </FormControl>
@@ -90,12 +95,12 @@ export default function ContactSection() {
                 name="eventDate"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Prospective Event Date</FormLabel>
+                    <FormLabel>{t.contact.form.date}</FormLabel>
                     <FormControl>
                       <Input type="date" {...field} />
                     </FormControl>
                     <FormDescription>
-                        This helps us check preliminary availability.
+                        {t.contact.form.dateHint}
                     </FormDescription>
                     <FormMessage />
                   </FormItem>
@@ -106,10 +111,10 @@ export default function ContactSection() {
                 name="message"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Your Message</FormLabel>
+                    <FormLabel>{t.contact.form.message}</FormLabel>
                     <FormControl>
                       <Textarea
-                        placeholder="Tell us about your event, number of guests, and any special requests."
+                        placeholder={t.contact.form.messagePlaceholder}
                         rows={5}
                         {...field}
                       />
@@ -119,7 +124,7 @@ export default function ContactSection() {
                 )}
               />
               <Button type="submit" className="w-full">
-                Send Inquiry
+                {t.contact.form.submitButton}
               </Button>
             </form>
           </Form>

@@ -18,6 +18,7 @@ export default function LandingPage() {
                 <VenueShowcase />
                 <PackagesSection />
                 <AvailabilitySection />
+                <MoodBoardSection />
                 <ContactSection />
             </main>
             <Footer />

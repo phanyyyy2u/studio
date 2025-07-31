@@ -10,16 +10,21 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useLanguage } from "@/lib/language-provider";
+import { dictionary } from "@/lib/i18n";
 
 
 export default function Header() {
   const [isOpen, setIsOpen] = React.useState(false);
-  
+  const { language, setLanguage } = useLanguage();
+  const t = dictionary[language];
+
   const navLinks = [
-    { href: "#venue", label: "Venue" },
-    { href: "#packages", label: "Packages" },
-    { href: "#availability", label: "Availability" },
-    { href: "#contact", label: "Contact" },
+    { href: "#venue", label: t.header.nav.venue },
+    { href: "#packages", label: t.header.nav.packages },
+    { href: "#availability", label: t.header.nav.availability },
+    { href: "#gallery", label: t.header.nav.gallery },
+    { href: "#contact", label: t.header.nav.contact },
   ];
   
   const NavLinksComponent = () => (
@@ -83,10 +88,10 @@ export default function Header() {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setLanguage('en')}>
                 English
               </DropdownMenuItem>
-              <DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setLanguage('es')}>
                 Español
               </DropdownMenuItem>
             </DropdownMenuContent>
@@ -94,7 +99,7 @@ export default function Header() {
 
           <a href="#contact">
             <Button>
-              Book Now
+              {t.header.bookButton}
             </Button>
           </a>
         </div>

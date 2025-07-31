@@ -5,6 +5,8 @@ import { useState } from "react";
 import { Check, ImagePlus } from "lucide-react";
 import { Card, CardContent } from "./ui/card";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/lib/language-provider";
+import { dictionary } from "@/lib/i18n";
 
 const moodImages = [
   { src: "https://placehold.co/400x400", alt: "Bohemian style table setting", hint: "bohemian table" },
@@ -19,6 +21,8 @@ const moodImages = [
 
 export default function MoodBoardSection() {
   const [selectedImages, setSelectedImages] = useState<string[]>([]);
+  const { language } = useLanguage();
+  const t = dictionary[language];
 
   const toggleImage = (src: string) => {
     setSelectedImages((prev) =>
@@ -27,18 +31,18 @@ export default function MoodBoardSection() {
   };
 
   return (
-    <section id="mood-board" className="container">
+    <section id="gallery" className="container">
       <div className="text-center mb-12">
         <ImagePlus className="h-12 w-12 mx-auto text-primary" />
-        <h2 className="text-4xl font-headline font-bold mt-4">Create Your Mood Board</h2>
+        <h2 className="text-4xl font-headline font-bold mt-4">{t.moodboard.title}</h2>
         <p className="text-lg text-muted-foreground mt-2 max-w-2xl mx-auto">
-          Select images from our gallery to build a visual palette for your event. Let your creativity flow!
+          {t.moodboard.subtitle}
         </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2">
-            <h3 className="font-headline text-2xl mb-4">Inspiration Gallery</h3>
+            <h3 className="font-headline text-2xl mb-4">{t.moodboard.galleryTitle}</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
             {moodImages.map((image) => {
                 const isSelected = selectedImages.includes(image.src);
@@ -68,13 +72,13 @@ export default function MoodBoardSection() {
         </div>
         
         <div>
-            <h3 className="font-headline text-2xl mb-4">Your Mood Board</h3>
+            <h3 className="font-headline text-2xl mb-4">{t.moodboard.boardTitle}</h3>
             <Card className="min-h-[400px] bg-secondary border-dashed">
                 <CardContent className="p-4">
                     {selectedImages.length === 0 ? (
                         <div className="flex flex-col items-center justify-center h-full text-center text-muted-foreground pt-16">
-                            <p>Your selected images will appear here.</p>
-                            <p className="text-sm">Click on the images to the left to add them.</p>
+                            <p>{t.moodboard.boardEmptyState}</p>
+                            <p className="text-sm">{t.moodboard.boardEmptyStateHint}</p>
                         </div>
                     ) : (
                         <div className="grid grid-cols-3 gap-2">

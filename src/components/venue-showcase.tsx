@@ -1,7 +1,13 @@
+"use client";
 import Image from "next/image";
 import { Card, CardContent } from "./ui/card";
+import { useLanguage } from "@/lib/language-provider";
+import { dictionary } from "@/lib/i18n";
 
 export default function VenueShowcase() {
+  const { language } = useLanguage();
+  const t = dictionary[language];
+
   const images = [
     { src: "https://placehold.co/600x800", alt: "Garden area set up for a wedding ceremony", hint: "wedding ceremony" },
     { src: "https://placehold.co/600x400", alt: "Main salon decorated for a quinceañera", hint: "quinceanera reception" },
@@ -14,9 +20,9 @@ export default function VenueShowcase() {
   return (
     <section id="venue" className="container">
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-headline font-bold">A Venue for Every Dream</h2>
+        <h2 className="text-4xl font-headline font-bold">{t.venue.title}</h2>
         <p className="text-lg text-muted-foreground mt-2 max-w-2xl mx-auto">
-          From lush gardens to elegant salons, explore the versatile spaces that make Quinta Saucedo unique.
+          {t.venue.subtitle}
         </p>
       </div>
       <div className="columns-2 md:columns-3 gap-4">
