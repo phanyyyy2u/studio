@@ -80,7 +80,7 @@ export default function AvailabilitySection() {
                             <span>qsevents67@gmail.com</span>
                         </div>
                     </div>
-                    <a href="#contact" className="block pt-2">
+                    <a href="#availability" className="block pt-2">
                         <Button className="w-full">{t.availability.quoteButton}</Button>
                     </a>
                 </CardContent>

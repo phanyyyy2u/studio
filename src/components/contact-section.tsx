@@ -15,10 +15,10 @@ import { dictionary } from "@/lib/i18n";
 
 
 const formSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters."),
-  email: z.string().email("Please enter a valid email address."),
+  name: z.string().min(2, "El nombre debe tener al menos 2 caracteres."),
+  phone: z.string().min(7, "Ingresa un número válido."),
   eventDate: z.string().optional(),
-  message: z.string().min(10, "Message must be at least 10 characters.").max(500, "Message must be less than 500 characters."),
+  message: z.string().min(10, "El mensaje debe tener al menos 10 caracteres.").max(500, "El mensaje debe ser menor a 500 caracteres."),
 });
 
 export default function ContactSection() {
@@ -30,7 +30,7 @@ export default function ContactSection() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
-      email: "",
+      phone: "",
       eventDate: "",
       message: "",
     },
@@ -46,7 +46,7 @@ export default function ContactSection() {
         },
         body: JSON.stringify({
           "Nombre": values.name,
-          "Correo": values.email,
+          "Teléfono": values.phone,
           "Fecha del evento": values.eventDate,
           "Mensaje": values.message
         })
@@ -96,9 +96,9 @@ export default function ContactSection() {
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>{t.contact.form.name}</FormLabel>
+                      <FormLabel>Nombre</FormLabel>
                       <FormControl>
-                        <Input placeholder="John Doe" {...field} />
+                        <Input placeholder="" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -106,12 +106,12 @@ export default function ContactSection() {
                 />
                 <FormField
                   control={form.control}
-                  name="email"
+                  name="phone"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>{t.contact.form.email}</FormLabel>
+                      <FormLabel>Teléfono</FormLabel>
                       <FormControl>
-                        <Input placeholder="qsevents67@gmail.com" {...field} />
+                        <Input placeholder="" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>

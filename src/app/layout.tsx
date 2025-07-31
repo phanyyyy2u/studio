@@ -5,7 +5,7 @@ import { LanguageProvider } from "@/lib/language-provider";
 
 export const metadata: Metadata = {
   title: "Quinta Saucedo",
-  description: "El lugar perfecto para tus eventos.",
+  description: "El lugar perfecto para tus eventos en Piedras Negras.",
 };
 
 export default function RootLayout({
@@ -18,8 +18,8 @@ export default function RootLayout({
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="El lugar perfecto para tus eventos en Morelos. Jardín, salón y atención personalizada." />
-        <meta name="keywords" content="eventos, jardín, salón, bodas, fiestas, morelos, quinta saucedo" />
+        <meta name="description" content="El lugar perfecto para tus eventos en Piedras Negras. Jardín, salón y atención personalizada." />
+        <meta name="keywords" content="eventos, jardín, salón, bodas, fiestas, piedras negras, quinta saucedo" />
         <meta name="author" content="Quinta Saucedo" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
