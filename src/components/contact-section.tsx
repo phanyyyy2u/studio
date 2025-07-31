@@ -36,13 +36,41 @@ export default function ContactSection() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    toast({
-      title: t.contact.toast.title,
-      description: t.contact.toast.description,
-    });
-    form.reset();
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      const response = await fetch("https://formspree.io/f/xkgzzbzk", {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          "Nombre": values.name,
+          "Correo": values.email,
+          "Fecha del evento": values.eventDate,
+          "Mensaje": values.message
+        })
+      });
+      if (response.ok) {
+        toast({
+          title: t.contact.toast.title,
+          description: t.contact.toast.description,
+        });
+        form.reset();
+      } else {
+        toast({
+          title: "Error",
+          description: "No se pudo enviar el mensaje. Intenta de nuevo más tarde.",
+          variant: "destructive"
+        });
+      }
+    } catch (e) {
+      toast({
+        title: "Error",
+        description: "No se pudo enviar el mensaje. Intenta de nuevo más tarde.",
+        variant: "destructive"
+      });
+    }
   }
 
   return (
